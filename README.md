@@ -68,8 +68,26 @@ $token = $user->createToken('My Token')->plainTextToken;
 ## Core files
 ``` 
 app/astonishing/app/Services
+
 app/astonishing/app/Factories
+
 app/astonishing/app/Helpers
+
+app/astonishing/app/Http/Middleware/LogRequestsAndResponses.php
+
+app/astonishing/app/Http/Middleware/ResolveUrlCode.php
+
+app/astonishing/app/Http/Controllers/UrlController.php
+
+app/astonishing/app/Models/Url.php
+
+app/astonishing/app/Validators/UrlValidator
+
+app/astonishing/app/Services/CacheAdapter
+
+app/astonishing/app/Repositories/Url
+
+app/astonishing/app/Helpers/ObjectCloner.php
 ```
 
 
