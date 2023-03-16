@@ -48,9 +48,8 @@ $user->password = Hash::make('password');
 $user->save();
  
 // Получение токена для API
-$token = $user->createToken('My Token');
+$token = $user->createToken('My Token')->plainTextToken;
 
-$accessToken = $token->accessToken;
 ```
 
 ## Схема таблицы urls в базе данных
