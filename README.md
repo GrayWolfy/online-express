@@ -17,9 +17,11 @@ git clone https://github.com/GrayWolfy/online-express.git
 ```
 ### В корне проекта
 ```
+cp .env.example .env
+
 docker-compose build
 
-docker-compose up
+docker-compose up -d
 
 docker exec -it php-fpm bash
 
