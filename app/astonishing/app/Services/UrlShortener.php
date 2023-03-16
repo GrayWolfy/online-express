@@ -47,9 +47,4 @@ class UrlShortener
 
         return response()->json(['short_url' => url($code)], 200);
     }
-
-    public function getByCode(string $code)
-    {
-        return $this->repository->findByCode($code);
-    }
 }
