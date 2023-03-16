@@ -1,0 +1,56 @@
+openapi: 3.0.0
+info:
+  title: URL Shortener API
+  version: 1.0.0
+paths:
+  /shorten:
+    post:
+      summary: Create a shortened URL
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                long_url:
+                  type: string
+                  format: uri
+                  description: The URL to shorten
+                  example: https://www.example.com
+              required:
+                - long_url
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  short_url:
+                    type: string
+                    format: uri
+                    description: The shortened URL
+                    example: http://localhost/abc123
+  /{code}:
+    get:
+      summary: Redirect to original URL
+      parameters:
+        - name: code
+          in: path
+          required: true
+          description: The code of the shortened URL
+          example: abc123
+          schema:
+            type: string
+      responses:
+        '302':
+          description: Found
+          headers:
+            Location:
+              schema:
+                type: string
+                format: uri
+                description: The original URL
+                example: https://www.example.com
