@@ -7,9 +7,6 @@ use Illuminate\Support\Facades\Cache;
 
 class CacheAdapter implements UrlCacheInterface
 {
-    public function __construct()
-    {}
-
     public function get(string $key)
     {
         return Cache::get($key);

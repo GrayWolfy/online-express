@@ -14,11 +14,11 @@ use Illuminate\Routing\Redirector;
 class UrlRedirector
 {
     public function __construct(
-        private UrlRepositoryInterface $repository,
-        private UrlCacheInterface $cache
+        private readonly UrlRepositoryInterface $repository,
+        private readonly UrlCacheInterface      $cache,
     ) {}
 
-    public function redirect($code): Application|JsonResponse|Redirector|RedirectResponse|\Illuminate\Contracts\Foundation\Application
+    public function redirect(string $code): Application|JsonResponse|Redirector|RedirectResponse|\Illuminate\Contracts\Foundation\Application
     {
         $longUrl = $this->cache->get($code);
 

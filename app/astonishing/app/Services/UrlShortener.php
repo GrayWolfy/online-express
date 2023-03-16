@@ -13,11 +13,11 @@ use Illuminate\Support\Str;
 class UrlShortener
 {
     public function __construct(
-        private UrlValidatorInterface $validator,
-        private UrlCacheInterface $cache,
-        private UrlRepositoryInterface $repository,
-        private UrlFactory $factory,
-        private Str $str
+        private readonly UrlValidatorInterface  $validator,
+        private readonly UrlCacheInterface      $cache,
+        private readonly UrlRepositoryInterface $repository,
+        private readonly UrlFactory             $factory,
+        private readonly Str                    $str,
     )
     {}
 
