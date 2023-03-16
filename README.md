@@ -63,7 +63,7 @@ $token = $user->createToken('My Token')->plainTextToken;
 
 
 ## Postman Specification
-В корне проекта файл postman.spec.yaml
+In the project root directory, there is a file called postman.spec.yaml.
 
 ## Core files
 ``` 
