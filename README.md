@@ -40,14 +40,14 @@ php artisan migrate
 ```
 php artisan tinker
 
-// Создание пользователя в базе 
+// Create a user in the database 
 $user = new App\Models\User;
 $user->name = 'John Doe';
 $user->email = 'johndoe@example.com';
 $user->password = Hash::make('password');
 $user->save();
  
-// Получение токена для API
+// Get an API token
 $token = $user->createToken('My Token')->plainTextToken;
 
 ```
