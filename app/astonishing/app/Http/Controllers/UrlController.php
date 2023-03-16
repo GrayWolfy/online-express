@@ -23,7 +23,7 @@ class UrlController extends Controller
         return $this->urlShortener->create($request->input('long_url'));
     }
 
-    public function show($code): Application|JsonResponse|Redirector|RedirectResponse|\Illuminate\Contracts\Foundation\Application
+    public function show(string $code): Application|JsonResponse|Redirector|RedirectResponse|\Illuminate\Contracts\Foundation\Application
     {
         return $this->redirector->redirect($code);
     }
