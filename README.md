@@ -2,12 +2,12 @@
 This is a Laravel-based application that allows you to shorten URLs and redirect them to the original URL when accessed.
 
 ## Features
-API interface for generating short links and retrieving the original link from a short one
-Accepts long URLs as a request body, such as http://domain/any/path/etc;
-Returns a unique short URL address in the format http://yourdomain/abCdE (external interfaces such as goo.gl should not be used);
-When a user opens a short link in a locally running project, it should redirect to the original full address.
-Data caching implementation
-Logging of all requests and responses to a file
+* API interface for generating short links and retrieving the original link from a short one
+* Accepts long URLs as a request body, such as http://domain/any/path/etc;
+* Returns a unique short URL address in the format http://yourdomain/abCdE (external interfaces such as goo.gl should not be used);
+* When a user opens a short link in a locally running project, it should redirect to the original full address.
+* Data caching implementation
+* Logging of all requests and responses to a file
 
 ## Usage
 To use this application, clone the repository and run the following commands in the terminal:
@@ -15,7 +15,7 @@ To use this application, clone the repository and run the following commands in 
 ```
 git clone https://github.com/GrayWolfy/online-express.git
 ```
-### В корне проекта
+### At the root of the project
 ```
 cp .env.example .env
 
@@ -35,7 +35,7 @@ php artisan key:generate
 
 php artisan migrate
 ```
-### Создаем пользователя тинкером
+### Create a user using Tinker
 
 ```
 php artisan tinker
@@ -52,7 +52,7 @@ $token = $user->createToken('My Token')->plainTextToken;
 
 ```
 
-## Схема таблицы urls в базе данных
+## Database table schema for "urls"
 | Column Name | Data Type              | Constraints                |
 |-------------|-----------------------|----------------------------|
 | id          | bigint unsigned       | primary key, auto_increment|
@@ -62,8 +62,15 @@ $token = $user->createToken('My Token')->plainTextToken;
 | updated_at  | timestamp null        |                            |
 
 
-## Спека для Postman
+## Postman Specification
 В корне проекта файл postman.spec.yaml
+
+## Core files
+``` 
+app/astonishing/app/Services
+app/astonishing/app/Factories
+app/astonishing/app/Helpers
+```
 
 
 
